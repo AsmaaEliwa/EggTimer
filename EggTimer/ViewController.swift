@@ -7,8 +7,9 @@
 //
 
 import UIKit
-
+import AVFoundation
 class ViewController: UIViewController {
+    var player: AVAudioPlayer? = nil
     @IBOutlet weak var isDone: UILabel!
     //    let softTime = 5
 //    let mediumTime = 8
@@ -63,7 +64,14 @@ class ViewController: UIViewController {
             counter -= 1
             timeBar.progress = progressTime
         }else{
+            do {
+                player =  try? AVAudioPlayer(contentsOf: NSURL(fileURLWithPath: Bundle.main.path(forResource: "alarm_sound", ofType: "mp3")!) as URL)
+            } catch(let error) {
+                print(error.localizedDescription)
+            }
+            player?.play()
             isDone.text = "Done!"
+            
         }
     }
     
