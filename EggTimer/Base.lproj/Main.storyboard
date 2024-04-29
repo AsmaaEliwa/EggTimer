@@ -122,16 +122,27 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJN-th-c5K" userLabel="Timer View">
                                         <rect key="frame" x="0.0" y="568.5" width="374" height="245.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIa-hv-slv">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIa-hv-slv">
                                                 <rect key="frame" x="147" y="8" width="81" height="49"/>
                                                 <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="Lev-Rq-ekJ">
+                                                <rect key="frame" x="0.0" y="120.5" width="374" height="6"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="5" id="HkQ-T1-4wb"/>
+                                                </constraints>
+                                                <color key="progressTintColor" red="0.86078912019999998" green="0.57604994229999995" blue="0.20921299870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="trackTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </progressView>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="Lev-Rq-ekJ" firstAttribute="centerY" secondItem="nJN-th-c5K" secondAttribute="centerY" id="8yh-Xz-mQs"/>
+                                            <constraint firstAttribute="trailing" secondItem="Lev-Rq-ekJ" secondAttribute="trailing" id="Nef-lu-V6D"/>
                                             <constraint firstItem="PIa-hv-slv" firstAttribute="leading" secondItem="nJN-th-c5K" secondAttribute="leading" constant="147" id="UUE-0y-SxA"/>
                                             <constraint firstAttribute="trailing" secondItem="PIa-hv-slv" secondAttribute="trailing" constant="146" id="Xle-9d-eQq"/>
+                                            <constraint firstItem="Lev-Rq-ekJ" firstAttribute="leading" secondItem="nJN-th-c5K" secondAttribute="leading" id="i6p-Ab-7Ar"/>
                                             <constraint firstAttribute="bottom" secondItem="PIa-hv-slv" secondAttribute="bottom" constant="188.5" id="uar-iY-w5m"/>
                                             <constraint firstItem="PIa-hv-slv" firstAttribute="top" secondItem="nJN-th-c5K" secondAttribute="top" constant="8" id="y4C-y7-YGV"/>
                                         </constraints>
@@ -149,6 +160,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="isDone" destination="XLm-5r-pSP" id="Gkj-am-xCn"/>
+                        <outlet property="timeBar" destination="Lev-Rq-ekJ" id="bQB-Ax-dEJ"/>
                         <outlet property="timeToCook" destination="PIa-hv-slv" id="yA2-Ts-daS"/>
                     </connections>
                 </viewController>
